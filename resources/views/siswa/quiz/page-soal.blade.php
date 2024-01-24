@@ -168,7 +168,7 @@
                     @csrf
                     <ul>
                         @foreach($pilihan as $e=>$pil)
-                        <li><input type="radio" name="answer" value="{{$pil->key}}"> {{$pil ->value}}</li>
+                        <li><input type="radio" name="answer" value="{{$pil->Key}}"> {{$pil ->Value}}</li>
                         @endforeach
                     </ul>
             </div>

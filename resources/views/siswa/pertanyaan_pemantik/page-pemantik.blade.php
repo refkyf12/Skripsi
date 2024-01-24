@@ -38,7 +38,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Refleksi</h1>
+                        <h1 class="m-0">Jawablah pertanyaan berikut.</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -69,9 +69,11 @@
                     </button>
                 </div>
                 <div class="toast-body" style="font-size: 20px;">
-                    <h4 class="text-center" id="pa-text">
-                        Refleksi
-                    </h4>
+                    @if(session('pa_response'))
+                    <h4 class="text-center" id="pa-text">{{ session('pa_response') }}</h4>
+                    @else
+                    <h4 class="text-center" id="pa-text">{{ $response }}</h4>
+                    @endif
                 </div>
             </div>
 
@@ -158,10 +160,10 @@
                 }
 
             </style>
-            <form action="/refleksi/submit" method="POST">
+            <form action="/pemantik/submit" method="POST">
             @foreach($data as $e=>$dt)
             <div class="question">
-                <h2>{{$dt -> soal_refleksi}}</h2>
+                <h2>{{$dt -> pertanyaan}}</h2>
                 <hr>
                     @csrf
                     <div class="form-group">

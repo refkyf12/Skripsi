@@ -38,7 +38,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Refleksi</h1>
+                        <h1 class="m-0">Akhir Pembelajaran</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -69,9 +69,7 @@
                     </button>
                 </div>
                 <div class="toast-body" style="font-size: 20px;">
-                    <h4 class="text-center" id="pa-text">
-                        Refleksi
-                    </h4>
+                    <h4>Selamat anda telah berhasil mengikuti proses pembelajaran ini</h4>
                 </div>
             </div>
 
@@ -158,24 +156,6 @@
                 }
 
             </style>
-            <form action="/refleksi/submit" method="POST">
-            @foreach($data as $e=>$dt)
-            <div class="question">
-                <h2>{{$dt -> soal_refleksi}}</h2>
-                <hr>
-                    @csrf
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Jawaban</label>
-                        <input type="hidden" name="pertanyaan_id[]" value="{{$dt->id}}">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="inputJawaban[]" rows="3"></textarea>
-                    </div>
-            </div>
-            <div style="width:200px">
-                <button id="btn-next" type="submit">Submit</button>
-            </div>
-            
-            @endforeach
-            </form>
         </div>
         <!-- /.content -->
     </div>

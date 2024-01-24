@@ -136,10 +136,10 @@
                                 <strong style="font-size: 30px;">{{ $dt->nama_quiz }}</strong>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-text">Karya Tulis Ilmiah</h5>
-                                <p class="card-text">Jumlah Soal : {{$dt->jumlah_soal}}</p>
+                                <h5 class="card-text">Jumlah Soal : {{$dt->jumlah_soal}}</h5>
+                                <p class="card-text">{{ $dt->created_at }}</p>
                                 <a href="/read-materi/{{$dt->id}}" class="btn btn-primary btn-xs btn-plus" id="tambah">
-                                    Mulai
+                                    Lihat Detail
                                 </a>
                                 <a href="/eval/{{$user->id}}" class="btn btn-success btn-xs btn-plus" id="tambah">
                                     Lihat Evaluasi

@@ -61,18 +61,6 @@
                     /* Atur indeks z jika diperlukan untuk menentukan tumpukan elemen */
                     /* Atur gaya lainnya sesuai kebutuhan Anda */
                 }
-
-                .scrollable-box {
-                    height: 400px;
-                    /* Ganti ketinggian sesuai kebutuhan */
-                    overflow-y: auto;
-                    /* Membuat box menjadi scrollable di sumbu Y (vertikal) jika konten melebihi ketinggian yang ditentukan */
-                    border: 1px solid #ccc;
-                    /* Contoh gaya border, sesuaikan jika perlu */
-                    padding: 10px;
-                    /* Contoh gaya padding, sesuaikan jika perlu */
-                }
-
                 .button {
                     margin-top: 20px;
                     align: center;

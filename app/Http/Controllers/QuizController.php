@@ -65,7 +65,7 @@ class QuizController extends Controller
             $quiz->save();
         }
 
-        $pilihan = json_decode($soal[0] -> pilihan);
+        $pilihan = json_decode($soal[0]->pilihan);
         return view('siswa.quiz.page-soal', ['data'=>$soal, 'pilihan'=>$pilihan, 'response'=>$pa_response]);
     }
 

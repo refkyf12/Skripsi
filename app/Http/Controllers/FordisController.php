@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
 use App\Models\Comments;
 use App\Models\User;
+use App\Models\Materi;
+use App\Models\Soal;
 
 use Illuminate\Http\Request;
 
@@ -14,7 +16,10 @@ class FordisController extends Controller
     public function indexPost()
     {
         $post= Post::all();
-        return view('siswa.fordis.fordis',['data'=>$post]);
+        $materi = Materi::where('quiz_id', 1)->get();
+        $soal = Soal::where('quiz_id', 1)->get();
+
+        return view('siswa.fordis.fordis',['data'=>$post, 'materi' => $materi,'soal'=> $soal]);
     }
 
     public function storePost(Request $request)

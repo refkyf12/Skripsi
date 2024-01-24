@@ -103,15 +103,27 @@
                     </button>
                 </div>
                 <div class="toast-body" style="font-size: 20px;">
-                    Halo! Selamat datang ke modul Karya Tulis Ilmiah. Dalam modul ini, kita akan belajar tentang
-                    bagaimana menulis karya tulis ilmiah yang berkualitas. Tujuan dari modul ini adalah membantu Anda
-                    memahami langkah-langkah penting dalam menulis karya tulis ilmiah sehingga Anda dapat menyusunnya
-                    dengan lebih baik.
+                    Halo! Selamat datang pada bagian Forum Diskusi. Forum ini bertujuan bertujuan untuk meningkatkan pemahaman anda terhadap teks esai. Dengan berpartisipasi aktif, Anda dapat berbagi ide, memahami sudut pandang berbeda, dan saling mendukung untuk mengatasi kesulitan pemahaman. Tujuannya bukan hanya pertukaran informasi, tetapi juga kolaborasi yang memperkaya proses pembelajaran melalui dialog dan refleksi bersama.
                 </div>
             </div>
+            
+            <div style="display: flex-start; justify-content: center;">
 
-            <button type="button" class="btn btn-outline-primary mt-3 mb-3" id="addPostButton" data-toggle="modal"
-                data-target="#myModal">Add Post</button>
+                <button type="button" class="btn btn-outline-primary mt-3 mb-3" id="addPostButton" data-toggle="modal"
+                        data-target="#myModal" style="margin-left: auto;">
+                    <i class="fa fa-plus" style="margin-right: 5px;"></i>
+                    Add Post
+                </button>
+
+                <div class="button">
+                    <a href="/start-quiz/{{ $materi[0]->quiz_id }}/{{ $soal[0]->id }}"
+                        class="btn btn-outline-primary mt-3 mb-3" id="tambah">
+                        <i class="fa fa-play"></i>
+                        <p style="font-size:18px;">Start Quiz</p>
+                    </a>
+                </div>
+
+            </div>
             
             <hr>
             @foreach($data as $e => $dt)
@@ -122,8 +134,7 @@
                     <h7>Deskripsi : </h7>
                     <p class="card-text">{{ $dt->content }}</p>
                     <a href="{{ asset('storage/' . $dt->path_pdf) }}" target="_blank">Link ke PDF</a>
-                    <p class="card-text"><small class="text-muted">Posted by: {{ $dt->user->name }} | Date: January 1,
-                            2024</small></p>
+                    <p class="card-text"><small class="text-muted">Posted by: {{ $dt->user->name }} | Date: {{$dt->created_at}}</small></p>
                     <div class="pdf-viewer">
                         <canvas id="pdfViewer_{{ $e }}"></canvas>
                     </div>
@@ -133,7 +144,7 @@
                     <div class="card mb-2">
                         <div class="card-body">
                             <p class="card-text"><small class="text-muted">Comment by {{ $comms->user->name }} | Date:
-                                    January 2, 2024</small></p>
+                                    {{ $dt->created_at }}</small></p>
                             <p class="card-text">{{ $comms->content }}</p>
                         </div>
                     </div>

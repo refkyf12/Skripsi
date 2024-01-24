@@ -16,7 +16,6 @@ class ReflectionAnswer extends Model
         'reflection_id',
         'user_id',
         'pilihanuser',
-        'pilihanbenar',
     ];
 
     public function refleks()

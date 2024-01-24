@@ -22,28 +22,32 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|unique:users|max:255',
-            'password' => 'required|string|min:6',
-            'role' => 'required|integer', // Pastikan role yang diterima adalah angka
-        ]);
-
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'role' => $request->role,
-        ]);
-
-        // Setelah berhasil mendaftarkan pengguna, lakukan pengecekan peran dan redirect
-        if ($user->role == 1) {
-            return redirect()->route('dashboard-admin'); // Redirect ke dashboard-guru
-        } elseif ($user->role == 2) {
-            return redirect()->route('dashboard-siswa'); // Redirect ke dashboard-siswa
+        try{
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'email' => 'required|string|email|unique:users|max:255',
+                'password' => 'required|string|min:6',
+                'role' => 'required|integer', // Pastikan role yang diterima adalah angka
+            ]);
+    
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'role' => $request->role,
+            ]);
+    
+            // Setelah berhasil mendaftarkan pengguna, lakukan pengecekan peran dan redirect
+            if ($user->role == 1) {
+                return redirect()->route('dashboard-admin'); // Redirect ke dashboard-guru
+            } elseif ($user->role == 2) {
+                return redirect()->route('dashboard-siswa'); // Redirect ke dashboard-siswa
+            }
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
         }
+        
 
-        return response()->json(['message' => 'User registered successfully', 'user' => $user], 201);
     }
 
     public function login(Request $request)

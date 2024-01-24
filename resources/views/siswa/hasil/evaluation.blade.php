@@ -62,17 +62,6 @@
                     /* Atur gaya lainnya sesuai kebutuhan Anda */
                 }
 
-                .scrollable-box {
-                    height: 400px;
-                    /* Ganti ketinggian sesuai kebutuhan */
-                    overflow-y: auto;
-                    /* Membuat box menjadi scrollable di sumbu Y (vertikal) jika konten melebihi ketinggian yang ditentukan */
-                    border: 1px solid #ccc;
-                    /* Contoh gaya border, sesuaikan jika perlu */
-                    padding: 10px;
-                    /* Contoh gaya padding, sesuaikan jika perlu */
-                }
-
                 .button {
                     margin-top: 20px;
                     align: center;
@@ -116,13 +105,6 @@
                     color: #333;
                 }
 
-                .jumbotron-scrollable {
-                    max-height: calc(100vh - 80px); /* Sesuaikan nilai ketinggian dengan kebutuhan Anda */
-                    overflow-y: auto;
-                    border: 1px solid #ccc; /* Contoh gaya border, sesuaikan jika perlu */
-                    padding: 10px; /* Contoh gaya padding, sesuaikan jika perlu */
-                }
-
             </style>
 
             <div class="toast align-items-center text-white bg-gray border-0" role="alert" aria-live="assertive"
@@ -150,7 +132,7 @@
 
             <hr>
 
-            <div class="jumbotron jumbotron-scrollable">
+            <div class="jumbotron">
                 <h1 class="display-4">Berikut adalah hasil dari quiz</h1>
                 <div class="table-responsive">
                     <table class="table table-hover myTable">
@@ -183,40 +165,6 @@
                 </div>
                 </div>
                 <hr class="my-4">
-
-                <h1 class="display-4">Berikut adalah hasil dari refleksi</h1>
-                    <div class="table-responsive">
-                        <table class="table table-hover myTable">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Refleksi</th>
-                                    <th>Hasil</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($reflection as $e=>$dt)
-                                <tr>
-                                    <td>{{ $e+1 }}</td>
-                                    <td>{{ $dt->refleks->nama_refleksi }}</td>
-                                    @if($dt->pilihanuser == $dt->pilihanbenar)
-                                    <td>Benar</td>
-                                    @else
-                                    <td>Salah</td>
-                                    @endif
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                        <div class="score-container">
-                    <h2>Skor Anda:</h2>
-                    <div class="score">
-                        <span>{{ $user->reflectivePoint }}</span>
-                    </div>
-                    </div>
-                    <hr class="my-4">
-                </div>
-
             </div>
 
         </div>

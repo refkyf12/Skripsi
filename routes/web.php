@@ -49,7 +49,7 @@ Route::get('/hasil/{user_id}/{quiz_id}', 'App\Http\Controllers\QuizController@in
 Route::get('/jawaban', 'App\Http\Controllers\JawabanController@index')->name('indexJawaban');
 Route::get('/eval/{id}', 'App\Http\Controllers\JawabanController@evalSiswa')->name('evalSiswa');
 Route::get('/reflection/{id}', 'App\Http\Controllers\JawabanController@reflection')->name('reflectionSiswa');
-Route::post('/reflection/next/{id}', 'App\Http\Controllers\JawabanController@reflectionnext')->name('reflectionNext');
+Route::post('/refleksi/submit', 'App\Http\Controllers\JawabanController@reflectionnext')->name('reflectionSiswa');
 
 //Fordis
 Route::get('/fordis', 'App\Http\Controllers\FordisController@indexPost')->name('indexPost');
@@ -58,4 +58,12 @@ Route::post('/comments', 'App\Http\Controllers\FordisController@storeComments')-
 
 //Soal
 Route::get('/soal', 'App\Http\Controllers\SoalController@index')->name('indexSoal');
+
+//Pemantik
+Route::get('/pemantik', 'App\Http\Controllers\PemantikController@index')->name('');
+Route::get('/hasil-pemantik', 'App\Http\Controllers\PemantikController@hasilPemantik')->name('');
+Route::post('/pemantik/submit', 'App\Http\Controllers\PemantikController@storePemantik')->name('');
+
+//AkhirPembelajaran
+Route::get('/hasil-pembelajaran', 'App\Http\Controllers\JawabanController@indexHasilPembelajaran')->name('');
 

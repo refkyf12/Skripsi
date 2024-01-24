@@ -30,49 +30,39 @@ class JawabanController extends Controller
     public function reflection(Request $request, $id)
     {
         $user = Auth::user();
-        $soal_refleksi = Reflection::find($id);
+        $soal = Reflection::all();
         $soal_id = $id;
         $pa_response = "Halo! Kuis tentang Karya Tulis Ilmiah akan dimulai. Fokuslah pada setiap pertanyaan. Ini peluang untuk memeriksa pemahamanmu tentang menulis KTI. Ayo mulai dan berikan yang terbaik!";
         
-        $pilihan = json_decode($soal_refleksi -> pilihan_refleksi);
-        
 
-        return view('siswa.hasil.reflection', ['data'=>$soal_refleksi, 'pilihan'=>$pilihan, 'response'=>$pa_response]);
+        return view('siswa.hasil.reflection', ['data'=>$soal, 'response'=>$pa_response]);
     }
 
-    public function reflectionnext(Request $request, $id)
+    public function reflectionnext(Request $request)
     {
-        $pa_response = "Halo! Kuis tentang Karya Tulis Ilmiah akan dimulai. Fokuslah pada setiap pertanyaan. Ini peluang untuk memeriksa pemahamanmu tentang menulis KTI. Ayo mulai dan berikan yang terbaik!";
-        $user = Auth::user();
-        $soal_refleksi = Reflection::find($id);
-        $pilihanUser = $request->input('answer');
-        $soal_id = $id;
-        $pilihanBenar = $soal_refleksi->refleksi_benar;
+        $jawaban = $request->all();
+        $user_id = Auth::user()->id;
 
-        if (!$request->has('answer')) {
-            return redirect()->back()->with('answer_error', 'Pilih jawaban terlebih dahulu.');
+        $pertanyaanIds = $request->input('pertanyaan_id');
+
+        $dataToInsert = [];
+        foreach ($jawaban['inputJawaban'] as $index => $data) {
+            $dataToInsert[] = [
+                'reflection_id' => $pertanyaanIds[$index],
+                'user_id' => $user_id,
+                'pilihanuser' => $data,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ];
         }
 
-        ReflectionAnswer::create([
-            'reflection_id' => $soal_id,
-            'user_id' => $user->id,
-            'pilihanuser' => $pilihanUser,
-            'pilihanbenar' => $pilihanBenar,
-        ]);
+        ReflectionAnswer::insert($dataToInsert);
 
-        if($pilihanUser == $pilihanBenar){
-            $user = User::find($user->id);
-            $user->reflectivePoint += 1;
-            $user->save();
-        }
+        return redirect('/hasil-pembelajaran')->with('success', 'Jawaban berhasil disimpan');
+    }
 
-        $soal_id = $soal_refleksi->id += 1;
-
-        if($soal_id > 2){
-            return redirect('/eval/' . $user->id)->with('pa_response', $pa_response)->with('user', $user);
-        } else {
-            return redirect('/reflection/' . $soal_id)->with('pa_response', $pa_response);
-        }
+    public function indexHasilPembelajaran(){
+        return view('siswa.hasil.hasil-pembelajaran');
     }
 
 }
