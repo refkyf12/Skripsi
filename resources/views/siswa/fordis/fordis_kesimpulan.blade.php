@@ -108,20 +108,14 @@
             </div>
             
             <div style="display: flex-start; justify-content: center;">
-
-                <!-- <button type="button" class="btn btn-outline-primary mt-3 mb-3" id="addPostButton" data-toggle="modal"
-                        data-target="#myModal" style="margin-left: auto;">
-                    <i class="fa fa-plus" style="margin-right: 5px;"></i>
-                    Add Post
-                </button> -->
-
                 <div class="button">
-                    <a href="/fordis-kesimpulan"
+                    <a href="/fordis-perbedaan"
                         class="btn btn-outline-primary mt-3 mb-3" id="tambah">
                         <i class="fa fa-play"></i>
-                        <p style="font-size:18px;">Diskusi Kesimpulan</p>
+                        <p style="font-size:18px;">Diskusi Perbedaan</p>
                     </a>
                 </div>
+                
 
             </div>
             

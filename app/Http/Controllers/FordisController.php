@@ -15,11 +15,29 @@ class FordisController extends Controller
 {
     public function indexPost()
     {
-        $post= Post::all();
+        $post= Post::where('type', 'idepokok')->get();
         $materi = Materi::where('quiz_id', 1)->get();
         $soal = Soal::where('quiz_id', 1)->get();
 
         return view('siswa.fordis.fordis',['data'=>$post, 'materi' => $materi,'soal'=> $soal]);
+    }
+
+    public function indexKesimpulan()
+    {
+        $post= Post::where('type', 'kesimpulan')->get();
+        $materi = Materi::where('quiz_id', 1)->get();
+        $soal = Soal::where('quiz_id', 1)->get();
+
+        return view('siswa.fordis.fordis_kesimpulan',['data'=>$post, 'materi' => $materi,'soal'=> $soal]);
+    }
+
+    public function indexPerbedaan()
+    {
+        $post= Post::where('type', 'perbedaan')->get();
+        $materi = Materi::where('quiz_id', 1)->get();
+        $soal = Soal::where('quiz_id', 1)->get();
+
+        return view('siswa.fordis.fordis_perbedaan',['data'=>$post, 'materi' => $materi,'soal'=> $soal]);
     }
 
     public function storePost(Request $request)

@@ -58,7 +58,7 @@
                 style="position: absolute; top: 0; right: 0; width: 400px; z-index: 9999;">
                 <div class="toast-header">
                     <div class="d-flex align-items-center">
-                        <img src="{{ asset('AdminLTE-3.2.0/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
+                        <img src="{{ asset('AdminLTE-3.2.0/dist/img/woman.png') }}" alt="AdminLTE Logo"
                             class="brand-image img-circle elevation-3"
                             style="opacity: .8; width: 40px; height: 40px; margin-right: 10px">
                         <strong class="mr-auto" style="font-size: 24px;">Pedagogical Agent</strong> <!-- Text -->
@@ -69,42 +69,52 @@
                     </button>
                 </div>
                 <div class="toast-body" style="font-size: 20px;">
-                    <h4>Selamat anda telah berhasil mengikuti proses pembelajaran ini</h4>
+                    <h4>Terima kasih telah mengikuti pembelajaran hari ini dengan baik. Apabila masih belum ada yang di pahami, Anda bisa mengakses beberapa link berikut untuk mempelajari lebih lanjut mengenai materi hari ini. Dan juga Anda bisa mengikuti program beasiswa jika tertarik</h4>
                 </div>
             </div>
 
-            @if(session('answer_error'))
-            <!-- Modal -->
-            <div class="modal" id="answerModal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h4 class="modal-title">Error</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-
-                        <!-- Modal body -->
-                        <div class="modal-body">
-                            <p>{{ session("answer_error") }}</p>
-                        </div>
-
-                        <!-- Modal footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
+            <div class="card-group">
+            <div class="card mr-3">
+                <img class="card-img-top" src="{{ asset('AdminLTE-3.2.0/dist/img/6472096.jpg') }}" alt="Card image cap">
+                <div class="card-body">
+                <h2>Beasiswa Esai</h2>
+                <hr>
+                <a href="https://www.instagram.com/reel/C2E0S0kL7Pe/?igsh=cng4aXJjN2tubTZi">Link</a>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
+            <div class="card mr-3">
+                <img class="card-img-top" src="{{ asset('AdminLTE-3.2.0/dist/img/6472096.jpg') }}" alt="Card image cap">
+                <div class="card-body">
+                <h2>Beasiswa Esai</h2>
+                <hr>
+                <a href="https://www.instagram.com/reel/C2NK_BXSCV-/?igsh=MTJ0Z3UwNnFtZmM4Mg%3D%3D">Link</a>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            </div>
+            <div class="card-group">
+            <div class="card mr-3 mt-3">
+                <img class="card-img-top" src="{{ asset('AdminLTE-3.2.0/dist/img/6472096.jpg') }}" alt="Card image cap">
+                <div class="card-body">
+                <h2>Materi Tambahan</h2>
+                <hr>
+                <a href="https://www.instagram.com/reel/C2NK_BXSCV-/?igsh=MTJ0Z3UwNnFtZmM4Mg%3D%3D">Link</a>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card mr-3 mt-3">
+                <img class="card-img-top" src="{{ asset('AdminLTE-3.2.0/dist/img/6472096.jpg') }}" alt="Card image cap">
+                <div class="card-body">
+                <h2>Materi Tambahan</h2>
+                <hr>
+                <a href="https://www.instagram.com/reel/Cz3fFVjLYnN/?igsh=MXZyeTdhdmRpY3J5ZA%3D%3D">Link</a>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            </div>
+            </div>
 
-            <!-- Script untuk menampilkan modal saat halaman dimuat -->
-            <script>
-                window.onload = function () {
-                    $('#answerModal').modal('show');
-                };
-
-            </script>
-            @endif
             <style>
                 .button {
                     margin-top: 20px;

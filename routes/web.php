@@ -53,6 +53,8 @@ Route::post('/refleksi/submit', 'App\Http\Controllers\JawabanController@reflecti
 
 //Fordis
 Route::get('/fordis', 'App\Http\Controllers\FordisController@indexPost')->name('indexPost');
+Route::get('/fordis-kesimpulan', 'App\Http\Controllers\FordisController@indexKesimpulan')->name('indexKesimpulan');
+Route::get('/fordis-perbedaan', 'App\Http\Controllers\FordisController@indexPerbedaan')->name('indexPerbedaan');
 Route::post('/post', 'App\Http\Controllers\FordisController@storePost')->name('storePost');
 Route::post('/comments', 'App\Http\Controllers\FordisController@storeComments')->name('storeComments');
 

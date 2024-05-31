@@ -105,7 +105,7 @@
                 style="position: absolute; top: 0; right: 0; width: 400px; z-index: 9999;">
                 <div class="toast-header">
                     <div class="d-flex align-items-center">
-                        <img src="{{ asset('AdminLTE-3.2.0/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
+                        <img src="{{ asset('AdminLTE-3.2.0/dist/img/woman.png') }}" alt="AdminLTE Logo"
                             class="brand-image img-circle elevation-3"
                             style="opacity: .8; width: 40px; height: 40px; margin-right: 10px">
                         <strong class="mr-auto" style="font-size: 24px;">Pedagogical Agent</strong> <!-- Text -->
@@ -116,9 +116,9 @@
                     </button>
                 </div>
                 <div class="toast-body" style="font-size: 20px;">
-                    Halo! Selamat datang ke modul Karya Tulis Ilmiah. Dalam modul ini, kita akan belajar tentang
-                    bagaimana menulis karya tulis ilmiah yang berkualitas. Tujuan dari modul ini adalah membantu Anda
-                    memahami langkah-langkah penting dalam menulis karya tulis ilmiah sehingga Anda dapat menyusunnya
+                    Halo! Selamat datang ke pembelajaran. Dalam modul ini, kita akan belajar tentang
+                    bagaimana menulis teks esai. Tujuan dari modul ini adalah membantu Anda
+                    memahami langkah-langkah penting dalam menulis teks esai sehingga Anda dapat menyusunnya
                     dengan lebih baik.
 
                 </div>

@@ -40,25 +40,34 @@ class JawabanController extends Controller
 
     public function reflectionnext(Request $request)
     {
-        $jawaban = $request->all();
-        $user_id = Auth::user()->id;
-
-        $pertanyaanIds = $request->input('pertanyaan_id');
-
-        $dataToInsert = [];
-        foreach ($jawaban['inputJawaban'] as $index => $data) {
-            $dataToInsert[] = [
-                'reflection_id' => $pertanyaanIds[$index],
-                'user_id' => $user_id,
-                'pilihanuser' => $data,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ];
+        try{
+            $request->validate([
+                'inputJawaban.*' => 'required',
+            ]);
+    
+            $jawaban = $request->all();
+            $user_id = Auth::user()->id;
+    
+            $pertanyaanIds = $request->input('pertanyaan_id');
+    
+            $dataToInsert = [];
+            foreach ($jawaban['inputJawaban'] as $index => $data) {
+                $dataToInsert[] = [
+                    'reflection_id' => $pertanyaanIds[$index],
+                    'user_id' => $user_id,
+                    'pilihanuser' => $data,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ];
+            }
+    
+            ReflectionAnswer::insert($dataToInsert);
+    
+            return redirect('/hasil-pembelajaran')->with('success', 'Jawaban berhasil disimpan');
+        } catch(\Exception $e) {
+            return redirect('reflection/1')->with('answer_error', $e->getMessage());
         }
-
-        ReflectionAnswer::insert($dataToInsert);
-
-        return redirect('/hasil-pembelajaran')->with('success', 'Jawaban berhasil disimpan');
+        
     }
 
     public function indexHasilPembelajaran(){

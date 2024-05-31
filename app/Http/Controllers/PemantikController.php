@@ -13,30 +13,39 @@ class PemantikController extends Controller
     public function index()
     {
         $soal = PertanyaanPemantik::all();
-        $pa_response = "Halo semua selamat datang";
+        $pa_response = "Silahkan jawab pertanyaan berikut, tidak perlu takut salah untuk menjawab.";
         return view('siswa.pertanyaan_pemantik.page-pemantik',['data'=>$soal, 'response'=>$pa_response]);
     }
 
     public function storePemantik(Request $request){
-        $jawaban = $request->all();
-        $user_id = Auth::user()->id;
-
-        $pertanyaanIds = $request->input('pertanyaan_id');
-
-        $dataToInsert = [];
-        foreach ($jawaban['inputJawaban'] as $index => $data) {
-            $dataToInsert[] = [
-                'pertanyaan_id' => $pertanyaanIds[$index],
-                'user_id' => $user_id,
-                'jawaban' => $data,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ];
+        try {
+            $request->validate([
+                'inputJawaban.*' => 'required',
+            ]);
+    
+            $jawaban = $request->all();
+            $user_id = Auth::user()->id;
+    
+            $pertanyaanIds = $request->input('pertanyaan_id');
+    
+            $dataToInsert = [];
+            foreach ($jawaban['inputJawaban'] as $index => $data) {
+                $dataToInsert[] = [
+                    'pertanyaan_id' => $pertanyaanIds[$index],
+                    'user_id' => $user_id,
+                    'jawaban' => $data,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ];
+            }
+    
+            JawabanPemantik::insert($dataToInsert);
+    
+            return redirect('/hasil-pemantik')->with('success', 'Jawaban berhasil disimpan');
+        } catch (\Exception $e) {
+            return redirect('/pemantik')->with('error', $e->getMessage());
         }
-
-        JawabanPemantik::insert($dataToInsert);
-
-        return redirect('/hasil-pemantik')->with('success', 'Jawaban berhasil disimpan');
+        
     }
 
     public function hasilPemantik(){

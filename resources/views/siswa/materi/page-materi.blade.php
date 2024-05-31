@@ -85,7 +85,7 @@
                 style="position: absolute; top: 0; right: 0; width: 400px; z-index: 9999;">
                 <div class="toast-header">
                     <div class="d-flex align-items-center">
-                        <img src="{{ asset('AdminLTE-3.2.0/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
+                        <img src="{{ asset('AdminLTE-3.2.0/dist/img/woman.png') }}" alt="AdminLTE Logo"
                             class="brand-image img-circle elevation-3"
                             style="opacity: .8; width: 40px; height: 40px; margin-right: 10px">
                         <strong class="mr-auto" style="font-size: 24px;">Pedagogical Agent</strong> <!-- Text -->
@@ -106,16 +106,33 @@
                         <h5 class="mb-0">
                             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
                                 aria-expanded="true" aria-controls="collapseOne">
-                                Materi apa yang akan dibahas
+                                Materi yang akan dibahas
                             </button>
                         </h5>
                     </div>
 
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
-                            <p>
-                            Ikuti pembelajaran ini untuk memahami teks esai. Di sini, Anda akan belajar bagaimana mengekspresikan ide dengan bebas dan kreatif. Materi ini tidak hanya akan ajarkan apa itu esai, tetapi juga membantu tingkatkan keterampilan berpikir kritis dan menulis Anda.
-                            </p>
+                            <ul>
+                                <li>
+                                    <strong>Pengertian esai menurut para ahli</strong>
+                                </li>
+                                <li>
+                                    <strong>Tujuan menulis esai</strong>
+                                </li>
+                                <li>
+                                    <strong>Ciri-ciri esai</strong>
+                                </li>
+                                <li>
+                                    <strong>Tipe esai</strong>
+                                </li>
+                                <li>
+                                    <strong>Kaidah kebahasaan</strong>
+                                </li>
+                                <li>
+                                    <strong>Bahasa dalam esai</strong>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -153,27 +170,6 @@
                                     </p>
                                 </li>
                                 <li>
-                                    <strong>Struktur tulisan yang terorganisir.</strong>
-                                    <hr>
-                                    <p>
-                                    Memahami esai membantu dalam menyusun tulisan dengan struktur yang jelas, memudahkan pembaca untuk mengikuti alur pemikiran.
-                                    </p>
-                                </li>
-                                <li>
-                                    <strong>Kemampuan persuasif.</strong>
-                                    <hr>
-                                    <p>
-                                    Penulisan esai melibatkan kemampuan meyakinkan pembaca dengan argumen yang kuat dan relevan, membentuk keterampilan persuasif.
-                                    </p>
-                                </li>
-                                <li>
-                                    <strong>Pemahaman gaya bahasa dan struktur teks.</strong>
-                                    <hr>
-                                    <p>
-                                    Mempelajari esai membantu dalam memahami berbagai gaya bahasa dan struktur teks, memperkaya kemampuan komunikasi.
-                                    </p>
-                                </li>
-                                <li>
                                     <strong>Peningkatan literasi kritis.</strong>
                                     <hr>
                                     <p>
@@ -185,13 +181,6 @@
                                     <hr>
                                     <p>
                                     Esai memungkinkan penulis menyampaikan pandangan pribadinya, membantu pembaca memahami kerangka pikir individu.
-                                    </p>
-                                </li>
-                                <li>
-                                    <strong>Membangun keterampilan penyusunan argumen.</strong>
-                                    <hr>
-                                    <p>
-                                    Esai membantu mengasah keterampilan menyusun argumen yang dapat dipertanggungjawabkan, memperkuat kemampuan logis.
                                     </p>
                                 </li>
                                 <li>
@@ -210,14 +199,19 @@
                         <h5 class="mb-0">
                             <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
                                 aria-expanded="false" aria-controls="collapseThree">
-                                Hasil Pembelajaran
+                                Capaian Elemen
                             </button>
                         </h5>
                     </div>  
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                         <div class="card-body">
+                            <h2>Menulis</h2>
+                            <hr>
                             <p>
-                            Setelah belajar teks esai, Anda akan jadi lebih baik dalam menyampaikan pikiran dan pandangan pribadi. Anda akan bisa menulis dengan lebih rapi dan mudah dimengerti. Selain itu, Anda juga akan bisa berpikir lebih kritis, membuat argumen yang kuat, dan berkomunikasi dengan lebih jelas dan meyakinkan. Pemahaman literasi kritis juga akan membantu Anda menginterpretasikan informasi dengan lebih bijaksana. Jadi, mempelajari teks esai bukan hanya untuk menulis, tapi juga untuk meningkatkan kemampuan berpikir dan berkomunikasi sehari-hari dan ke depannya.
+                            Peserta didik mampu menulis gagasan,pikiran, pandangan, pengetahuan metakognisi untuk berbagai tujuan secara logis, kritis, dan kreatif.
+                            </p>
+                            <p>
+                            Peserta didik mampu menulis hasil penelitian, teks fungsional dunia kerja, dan pengembangan studi lanjut.
                             </p>
                         </div>
                     </div>

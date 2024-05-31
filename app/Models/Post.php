@@ -15,7 +15,8 @@ class Post extends Model
         'judul_konten',
         'content',
         'id_user',
-        'path_pdf'
+        'path_pdf',
+        'type'
     ];
 
     // Relasi antara Materi dan Quiz

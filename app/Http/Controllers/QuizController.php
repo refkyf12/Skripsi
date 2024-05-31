@@ -55,7 +55,7 @@ class QuizController extends Controller
                 ->where('id', $id)
                 ->get();
 
-        $pa_response = "Halo! Kuis tentang Karya Tulis Ilmiah akan dimulai. Fokuslah pada setiap pertanyaan. Ini peluang untuk memeriksa pemahamanmu tentang menulis KTI. Ayo mulai dan berikan yang terbaik!";
+        $pa_response = "Halo! Anda telah memasuki sesi evaluasi. Silahkan untuk mengisi soal-soal yang diberikan dengan baik sesuai dengan yang kalian pelajari tadi!";
         
         $id_user = Auth::user()->id;
         if($id == 1) {

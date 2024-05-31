@@ -116,10 +116,10 @@
                 </button> -->
 
                 <div class="button">
-                    <a href="/fordis-kesimpulan"
+                    <a href="/start-quiz/{{ $materi[0]->quiz_id }}/{{ $soal[0]->id }}"
                         class="btn btn-outline-primary mt-3 mb-3" id="tambah">
                         <i class="fa fa-play"></i>
-                        <p style="font-size:18px;">Diskusi Kesimpulan</p>
+                        <p style="font-size:18px;">Start Quiz</p>
                     </a>
                 </div>
 
@@ -134,7 +134,7 @@
                     <h7>Deskripsi : </h7>
                     <p class="card-text">{{ $dt->content }}</p>
                     <a href="{{ asset('storage/' . $dt->path_pdf) }}" target="_blank">Link ke PDF</a>
-                    <p class="card-text"><small class="text-muted">Posted by: Admin | Date: {{$dt->created_at}}</small></p>
+                    <p class="card-text"><small class="text-muted">Posted by:Admin | Date: {{$dt->created_at}}</small></p>
                     <div class="pdf-viewer">
                         <canvas id="pdfViewer_{{ $e }}"></canvas>
                     </div>
